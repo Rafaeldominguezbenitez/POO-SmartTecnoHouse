@@ -7,7 +7,7 @@ public class ActuadorVentilador extends Actuador { // Subclase para ventiladores
         super("fan", "Ventilador", "off"); // Se construye el objeto a partir del constructor padre
     }
 
-    // Implementación de la función ejecutarAccion de la clase padre Actuador
+    // Implementación del metodo ejecutarAccion de la clase padre Actuador
     @Override
     public void ejecutarAccion(String accion) {
         String accionNormalizada = accion.toLowerCase();
@@ -22,7 +22,7 @@ public class ActuadorVentilador extends Actuador { // Subclase para ventiladores
         }
     }
 
-    // Implementación de la función getAccionesPosibles de la clase padre Actuador
+    // Implementación del metodo getAccionesPosibles de la clase padre Actuador
     @Override
     public String[] getAccionesPosibles() {
         return new String[]{"on", "off", "low", "medium", "high"};

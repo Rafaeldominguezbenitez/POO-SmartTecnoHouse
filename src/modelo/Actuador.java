@@ -15,7 +15,7 @@ public abstract class Actuador implements IDispositivo {
         this.estado = estado;
     }
 
-    //Implementacion funciones interfaz IDispositivo
+    //Implementacion metodos interfaz IDispositivo
     @Override
     public String getID(){
         return id;
@@ -31,7 +31,7 @@ public abstract class Actuador implements IDispositivo {
         return estado;
     }
 
-    //Implementacion funciones especificas de actuadores
+    //Implementacion metodos especificos de actuadores
     //Cada actuador implementará una lógica de forma individual
     public abstract void ejecutarAccion(String accion);
 

@@ -7,7 +7,7 @@ public class ActuadorBombilla extends Actuador{ //Subclase para bombillas (actua
         super("bulb", "Bombilla", "off"); //Se construye el objeto a partir del constructor padre
     }
 
-    //Implementación de la funcion ejecutarAccion de la clase padre Actuador
+    //Implementación del metodo ejecutarAccion de la clase padre Actuador
     @Override
     public void ejecutarAccion(String accion){
         String accionNormalizada = accion.toLowerCase();
@@ -21,7 +21,7 @@ public class ActuadorBombilla extends Actuador{ //Subclase para bombillas (actua
         }
     }
 
-    //Implementación de la funcion getAccionesPosibles de la clase padre Actuador
+    //Implementación del metodo getAccionesPosibles de la clase padre Actuador
     @Override
     public String[] getAccionesPosibles(){
         return new String[]{"on", "off"};

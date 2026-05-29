@@ -18,7 +18,7 @@ public abstract class Sensor implements IDispositivo {
         this.estado = estado.toLowerCase();
     }
 
-    //Implementacion funciones de la interfaz IDispositivo
+    //Implementacion metodos de la interfaz IDispositivo
     @Override
     public String getID(){
         return this.id;
@@ -34,7 +34,7 @@ public abstract class Sensor implements IDispositivo {
         return this.estado + " " + this.ultimoValor + this.unidadMedida; //Devuelve estado (ON, OFF) y el último valor con su unidad
     }
 
-    //Funciones propias de los sensores
+    //Metodos propios de los sensores
     public double getValor(){
         return this.ultimoValor;
     }

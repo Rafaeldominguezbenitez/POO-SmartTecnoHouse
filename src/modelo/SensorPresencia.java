@@ -24,7 +24,7 @@ public class SensorPresencia extends Sensor{ //Subclase para sensores de presenc
     }
 
     @Override
-    public String getEstadoActual(){ //Funcion polimórfica para a partir del double ultimoValor devolver un string
+    public String getEstadoActual(){ //Metodo polimórfico para a partir del double ultimoValor devolver un string
         if(!this.estado.equals("on")){ //Si el dispositivo no está encendido, no se hace nada
             return "El dispositivo está apagado";
         }
