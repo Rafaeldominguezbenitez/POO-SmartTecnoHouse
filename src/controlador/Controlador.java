@@ -4,6 +4,7 @@ package controlador;
 import modelo.SmartTecnoHouse;
 import modelo.Actuador;
 import modelo.Sensor;
+import vista.Vista;
 
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
@@ -15,7 +16,7 @@ public class Controlador {
 
     private final SmartTecnoHouse modelo; //Referencia a la clase principal del modelo
     private Timer timer; //Temporizador para actualizar los sensores constantemente
-    // private Vista vista; //Referencia a la vista
+    private Vista vista; //Referencia a la vista
 
     //Constructor: instancia del modelo e inicio del temporizador
     public Controlador() {
@@ -32,10 +33,18 @@ public class Controlador {
                 //Se actualizan los sensores
                 modelo.actualizarSensores();
 
-                //Aquí se llamaría al metodo de la vista que actualice la interfaz de usuario
+                //Se actualiza la interfaz de usuario para mostrar los nuevos valores
+                if (vista != null) {
+                    vista.actualizarInterfaz();
+                }
             }
         });
 
+    }
+
+    //Metodo para asignar la vista
+    public void setVista(Vista vista) {
+        this.vista = vista;
     }
 
     //Metodo que inicia el temporizador
