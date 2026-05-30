@@ -27,7 +27,7 @@ public class Controlador {
     //Metodo que configura el temporizador
     private void inicializarTemporizador(){
 
-        this.timer = new Timer(1000, new ActionListener() { //Se crea un temporizador que se actualiza cada segundo
+        this.timer = new Timer(3000, new ActionListener() { //Se crea un temporizador que se actualiza cada tres segundos
             @Override
             public void actionPerformed(ActionEvent e) { //Metodo de ActionListener que marca qué se hace cada el tiempo definido en el timer
                 //Se actualizan los sensores
@@ -73,7 +73,10 @@ public class Controlador {
                 break;
             }
         }
-        //Aqui iria llamar a la vista para actualizar el boton
+        //Se actualiza la vista cada vez que se pulsa un boton
+        if (this.vista != null) {
+            this.vista.actualizarInterfaz();
+        }
 
     }
 

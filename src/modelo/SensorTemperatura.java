@@ -7,7 +7,7 @@ public class SensorTemperatura extends Sensor{ //Subclase para sensores de tempe
     //Constructor
     public SensorTemperatura(){
         //Se crea el objeto siguiendo el constructor padre y luego se añaden comportamientos específicos
-        super("temp", "Sensor_Temperatura", "grados centígrados", "on");
+        super("temp", "Sensor_Temperatura", " grados centígrados", "on");
         this.random = new Random();
         actualizarValor(); //Se genera un valor inicial al instanciar un objeto
     }

@@ -19,7 +19,7 @@ public class Vista extends JFrame {
 
         //Configuración visual de la ventana
         setTitle("Smart TecnoHouse SA | Control IoT"); //Título
-        setSize(600, 400); //Tamaño
+        setSize(750, 600); //Tamaño
         setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); //Se cancela el funcionamiento por defecto de la "x" de cierre para crearle un comportamiento personalizado
         setLocationRelativeTo(null); //Se centra la ventana
         setLayout(new BorderLayout(10, 10));
@@ -35,34 +35,57 @@ public class Vista extends JFrame {
 
         //Panel
         JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new FlowLayout());
-        //Bombilla
+        panelBotones.setLayout(new GridLayout(3, 1, 2, 2)); //Grid Layout de 3 filas y una columna para los botones
+
+        //Bombilla (fila 1)
+        JPanel panelBombilla = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JLabel lblBombilla = new JLabel("Iluminación: ");
+        lblBombilla.setFont(new Font("Arial", Font.BOLD, 11));
         JButton btnBombillaOn = new JButton("Luz on");
         JButton btnBombillaOff = new JButton("Luz off");
-        //Ventilador
-        JButton btnVentiladorOff = new JButton("Ventilador off");
+
+        panelBombilla.add(lblBombilla);
+        panelBombilla.add(btnBombillaOn);
+        panelBombilla.add(btnBombillaOff);
+
+        //Ventilador (fila 2)
+        JPanel panelVentilador = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JLabel lblVentilador = new JLabel("Ventilador: ");
+        lblVentilador.setFont(new Font("Arial", Font.BOLD, 11));
         JButton btnVentiladorOn = new JButton("Ventilador on");
+        JButton btnVentiladorOff = new JButton("Ventilador off");
         JButton btnVentiladorLow = new JButton("Ventilador low");
         JButton btnVentiladorMedium = new JButton("Ventilador medium");
         JButton btnVentiladorHigh = new JButton("Ventilador high");
-        //Humidificador
+
+        panelVentilador.add(lblVentilador);
+        panelVentilador.add(btnVentiladorOn);
+        panelVentilador.add(btnVentiladorOff);
+        panelVentilador.add(btnVentiladorLow);
+        panelVentilador.add(btnVentiladorMedium);
+        panelVentilador.add(btnVentiladorHigh);
+
+        //Humidificador (fila 3)
+        JPanel panelHumi = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JLabel lblHumi = new JLabel("Humidificador: ");
+        lblHumi.setFont(new Font("Arial", Font.BOLD, 11));
         JButton btnHumiOn = new JButton("Humidificador on");
         JButton btnHumiOff = new JButton("Humidificador off");
         JButton btnHumiLow = new JButton("Humidificador low");
         JButton btnHumiHigh = new JButton("Humidificador high");
 
-        //Se añaden estos botones a la parte inferior
-        panelBotones.add(btnBombillaOn);
-        panelBotones.add(btnBombillaOff);
-        panelBotones.add(btnVentiladorOn);
-        panelBotones.add(btnVentiladorOff);
-        panelBotones.add(btnVentiladorLow);
-        panelBotones.add(btnVentiladorMedium);
-        panelBotones.add(btnVentiladorHigh);
-        panelBotones.add(btnHumiOn);
-        panelBotones.add(btnHumiOff);
-        panelBotones.add(btnHumiLow);
-        panelBotones.add(btnHumiHigh);
+        panelHumi.add(lblHumi);
+        panelHumi.add(btnHumiOn);
+        panelHumi.add(btnHumiOff);
+        panelHumi.add(btnHumiLow);
+        panelHumi.add(btnHumiHigh);
+
+        //Se añaden las 3 filas al panel
+        panelBotones.add(panelBombilla);
+        panelBotones.add(panelVentilador);
+        panelBotones.add(panelHumi);
+
+        //Se añade el panel con los botones a la parte inferior del panel principal
         add(panelBotones, BorderLayout.SOUTH);
 
 

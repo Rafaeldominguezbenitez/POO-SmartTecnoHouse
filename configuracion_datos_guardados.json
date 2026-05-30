@@ -1,0 +1,12 @@
+{
+  "actuadoresEstados": {
+    "fan": "high",
+    "bulb": "off",
+    "humi": "high"
+  },
+  "reglasLista": [
+    "ReglaIluminacion",
+    "ReglaControlTemperatura",
+    "ReglaCalidadAire"
+  ]
+}
